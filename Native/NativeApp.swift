@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct NativeApp: App {
+    @StateObject private var translationManager = AudioTranslationManager()
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(translationManager)
         }
     }
 }
